@@ -9,6 +9,8 @@ from phoenix_factory.core.version import (
     get_version,
 )
 
+from phoenix_factory.runtime import PhoenixRuntime
+
 
 class PhoenixApplication:
     """
@@ -18,6 +20,7 @@ class PhoenixApplication:
     def __init__(self) -> None:
         self.name = get_application_name()
         self.version = get_version()
+        self.runtime = PhoenixRuntime()
 
     def run(self) -> None:
         """
@@ -25,12 +28,22 @@ class PhoenixApplication:
         """
 
         print("=" * 40)
-        print(f"{self.name}")
+        print(self.name)
         print("=" * 40)
         print(f"Version : {self.version}")
         print()
+
         print("Initializing...")
         print()
+
+        #
+        # Initialize Runtime
+        #
+        self.runtime.initialize()
+
+        #
+        # Current startup status
+        #
         print("✓ Config")
         print("✓ Logger")
         print("✓ Environment")
@@ -38,5 +51,6 @@ class PhoenixApplication:
         print("✓ Manifest")
         print("✓ PAAL")
         print("✓ Pipeline")
+
         print()
         print("Factory Ready.")
