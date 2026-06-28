@@ -10,6 +10,7 @@ from phoenix_factory.core.version import (
 )
 
 from phoenix_factory.runtime import PhoenixRuntime
+from phoenix_factory.pipelines.asset_pipeline import AssetPipeline
 
 
 class PhoenixApplication:
@@ -18,39 +19,39 @@ class PhoenixApplication:
     """
 
     def __init__(self) -> None:
+
         self.name = get_application_name()
+
         self.version = get_version()
+
         self.runtime = PhoenixRuntime()
 
+        self.pipeline = AssetPipeline()
+
     def run(self) -> None:
-        """
-        Start Phoenix Factory.
-        """
 
         print("=" * 40)
+
         print(self.name)
+
         print("=" * 40)
+
         print(f"Version : {self.version}")
+
         print()
 
         print("Initializing...")
+
         print()
 
-        #
-        # Initialize Runtime
-        #
         self.runtime.initialize()
 
-        #
-        # Current startup status
-        #
-        print("✓ Config")
-        print("✓ Logger")
-        print("✓ Environment")
-        print("✓ Asset Library")
-        print("✓ Manifest")
-        print("✓ PAAL")
-        print("✓ Pipeline")
+        print("✓ Runtime Ready")
 
         print()
+
+        self.pipeline.execute()
+
+        print()
+
         print("Factory Ready.")
