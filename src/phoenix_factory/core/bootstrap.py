@@ -1,25 +1,22 @@
 """
-Phoenix Factory Bootstrap
+Project Phoenix Factory
+
+Bootstrap
 """
 
-from phoenix_factory.config import Config
-from phoenix_factory.logging import Logger
+from phoenix_factory.core.application import PhoenixApplication
 
 
 class Bootstrap:
+    """
+    Bootstrap Phoenix Factory.
+    """
 
-    def __init__(self):
+    @staticmethod
+    def start() -> None:
+        """
+        Start Phoenix Factory.
+        """
 
-        self.logger = Logger()
-
-    def initialize(self):
-
-        Config.initialize()
-
-        self.logger.info("Bootstrapping Phoenix Factory...")
-
-        self.logger.success("Config Ready")
-
-        self.logger.success("Logger Ready")
-
-        self.logger.success("Environment Ready")
+        app = PhoenixApplication()
+        app.run()

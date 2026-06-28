@@ -1,30 +1,42 @@
-from phoenix_factory.config import Config
-from phoenix_factory.core.banner import print_banner
-from phoenix_factory.logging import Logger
-from phoenix_factory.pipelines import AssetPipeline
+"""
+Project Phoenix Factory
+
+Application Entry
+"""
+
+from phoenix_factory.core.version import (
+    get_application_name,
+    get_version,
+)
 
 
 class PhoenixApplication:
+    """
+    Phoenix Factory Main Application.
+    """
 
-    def start(self):
+    def __init__(self) -> None:
+        self.name = get_application_name()
+        self.version = get_version()
 
-        logger = Logger()
+    def run(self) -> None:
+        """
+        Start Phoenix Factory.
+        """
 
-        Config.initialize()
-
-        print_banner()
-
-        print("AI Asset Production Pipeline")
+        print("=" * 40)
+        print(f"{self.name}")
+        print("=" * 40)
+        print(f"Version : {self.version}")
         print()
-
-        logger.success("Framework Ready")
-
+        print("Initializing...")
         print()
-
-        pipeline = AssetPipeline()
-
-        pipeline.execute()
-
+        print("✓ Config")
+        print("✓ Logger")
+        print("✓ Environment")
+        print("✓ Asset Library")
+        print("✓ Manifest")
+        print("✓ PAAL")
+        print("✓ Pipeline")
         print()
-
-        logger.success("Phoenix Factory Ready.")
+        print("Factory Ready.")

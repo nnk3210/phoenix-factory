@@ -1,11 +1,17 @@
-from phoenix_factory.core.application import PhoenixApplication
+"""
+Project Phoenix Factory
+
+Main Entry
+"""
+
+from phoenix_factory.core.bootstrap import Bootstrap
 
 
-def main():
-
-    app = PhoenixApplication()
-
-    app.start()
+def main() -> None:
+    """
+    Phoenix Factory entry point.
+    """
+    Bootstrap.start()
 
 
 if __name__ == "__main__":
