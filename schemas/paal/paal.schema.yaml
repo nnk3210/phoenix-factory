@@ -1,0 +1,82 @@
+version: "1.0"
+
+specification: "PAAL Enterprise"
+
+project: "Project Phoenix"
+
+asset:
+
+  id: string
+
+  name: string
+
+  category: string
+
+  race: string
+
+  gender: string
+
+  type: string
+
+  part: string
+
+render:
+
+  output: PNG
+
+  background: Transparent
+
+  canvas: TightCrop
+
+  color_space: sRGB
+
+pivot:
+
+  mode: BottomCenter
+
+views:
+
+  - Front
+
+resolution:
+
+  width: integer
+
+  height: integer
+
+layer:
+
+  order: integer
+
+  group: string
+
+animation:
+
+  enabled: true
+
+  directions:
+
+    - S
+    - SW
+    - W
+    - NW
+    - N
+    - NE
+    - E
+    - SE
+
+metadata:
+
+  author: string
+
+  version: string
+
+  tags: []
+
+dependencies: []
+
+prompt:
+
+  positive: ""
+
+  negative: ""

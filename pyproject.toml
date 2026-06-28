@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=80", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phoenix-factory"
+version = "0.1.0"
+description = "Project Phoenix AI Asset Production Pipeline"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+authors = [
+    { name = "Kenshin" }
+]
+
+keywords = [
+    "ai",
+    "game",
+    "asset",
+    "sprite",
+    "generator",
+    "phoenix"
+]
+
+dependencies = [
+    "Pillow>=11.0.0",
+    "numpy>=2.0.0",
+    "opencv-python>=4.11.0",
+    "pydantic>=2.11.0",
+    "PyYAML>=6.0.2",
+]
+
+[project.optional-dependencies]
+
+dev = [
+    "pytest>=8.3",
+    "black>=25.0",
+    "ruff>=0.12",
+    "mypy>=1.17",
+]
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

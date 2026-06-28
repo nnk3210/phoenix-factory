@@ -1,0 +1,93 @@
+version: "1.0"
+
+project: "Project Phoenix"
+
+asset:
+
+  id: hero_body
+
+  name: Hero
+
+  category: Character
+
+  race: Human
+
+  gender: Male
+
+  type: Player
+
+  part: Body
+
+render:
+
+  output: PNG
+
+  background: Transparent
+
+  canvas: TightCrop
+
+  color_space: sRGB
+
+pivot:
+
+  mode: BottomCenter
+
+views:
+
+  - Front
+
+resolution:
+
+  width: 1024
+
+  height: 1024
+
+layer:
+
+  order: 10
+
+  group: Body
+
+animation:
+
+  enabled: true
+
+  directions:
+
+    - S
+    - SW
+    - W
+    - NW
+    - N
+    - NE
+    - E
+    - SE
+
+metadata:
+
+  author: Phoenix Factory
+
+  version: "1.0"
+
+  tags:
+
+    - Player
+
+    - Human
+
+dependencies: []
+
+prompt:
+
+  positive: |
+    Chibi fantasy RPG body,
+    transparent background,
+    front view,
+    idle pose
+
+  negative: |
+    blur,
+    watermark,
+    text,
+    cropped,
+    extra arms
